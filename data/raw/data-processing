@@ -1,0 +1,31 @@
+import csv
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+#put csv file into my correct location, reading it in using with open and r for read mode
+with open("data/raw/penguins_size.csv", 'r') as csvfile:
+  csv_reader = csv.reader(csvfile)
+  for row in csv_reader:
+    print(row)
+    
+#putting it into a dataframe using pandas
+df = pd.read_csv("data/raw/penguins_size.csv")
+print(df.head()) #displaying dataframe
+df.info()
+print("test")
+
+#cleaning the data - removing all rows without numerical values filled in
+#want to use numerical data to predict the penguins species
+#no gender or island is okay because not numerical
+df_cleaned = df.dropna(subset=['species','culmen_length_mm', 'culmen_depth_mm', 'flipper_length_mm', 'body_mass_g'])
+print(df_cleaned.head()) #checking cleaned data for nulls
+
+#replace penguins_size.csv with cleaned data
+df_cleaned.to_csv('data/processed/penguins_size_cleaned.csv', index=False)
+#looking at data i can see no null values in important columns
+
+sns.pairplot(df_cleaned, hue='species', vars=['culmen_length_mm', 'culmen_depth_mm', 'flipper_length_mm', 'body_mass_g'])
+plt.savefig('images/pairplot_penguins.png') #saving plot to images folder
+plt.show() #data shows relationships between features and species
+#will be possble to make predictions for species based on numerical data 
