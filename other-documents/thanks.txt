@@ -1,0 +1,5 @@
+Thank you to my dad and my sister who both work in data analysis and processing who helped me through
+this whole project, from helping me organise my files to what to do with my data.
+They have been referenced at the appropriate times.
+VSCode has also given me a great deal of help by suggesting code and showing me the expected inputs
+for each function etc.
