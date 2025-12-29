@@ -77,3 +77,25 @@ def evaluate_neural_network(mlp, x_test_scaled, y_test): #evaluating model based
     accuracy = accuracy_score(y_test, y_pred) #calculating accuracy
     report = classification_report(y_test, y_pred) #report of classification created
     return accuracy, report #returns accuracy and classification report
+
+#function for question 3 - imbalancing classes
+
+#function to imbalance dataset by reducing samples of specific classes 
+#vscode suggestion with some modifications from chatgpt when it wasnt working correctly
+def imbalance_classes(x, y, classes_to_reduce, reduction_fraction=0.5, random_state=42): #reduce specific classes by a fraction
+    import numpy as np
+    np.random.seed(random_state) #setting random seed 42 for reproducibility 
+    indices_to_keep = [] #storing samples to keep
+    for cls in y.unique(): #iterating through classes in target
+        cls_indices = y[y == cls].index #getting locations of samples for the class
+        if cls in classes_to_reduce: #checking if class needs to be reduced
+            n_to_keep = int(len(cls_indices) * (1 - reduction_fraction)) #calculating number of samples to keep
+            kept_indices = np.random.choice(cls_indices, n_to_keep, replace=False) #randomly selecting samples to keep
+        else: #if class not being reduced
+            kept_indices = cls_indices #keep the samples the same
+        indices_to_keep.extend(kept_indices) #adding samples to the list
+    indices_to_keep = sorted(indices_to_keep) #sorting them back to the correct order - chatgpt suggestion
+    x_imbalanced = x.loc[indices_to_keep] #creating imbalanced feature set
+    y_imbalanced = y.loc[indices_to_keep] #creating imbalanced target set
+    return x_imbalanced, y_imbalanced #returns the imbalanced features and target
+#if data not organised it caused issues for analysis
