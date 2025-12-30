@@ -10,7 +10,7 @@ from sklearn.metrics import accuracy_score, classification_report
 #helper functions 
 #keeping notebooks clean with files here
 #all functions were created with help from scikit-learn tutorials online and vscode suggestions,
-#occasionally other sources such as chatgpt used to correct or give suggestions
+#occasionally other sources such as chatgpt used to correct or give suggestions - mentioned in comments
 #vscode suggested function parameters and random states = 42 , kept the same for reproducibility
 
 #loading data function
