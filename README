@@ -3,9 +3,9 @@ Classifying the species of a penguin using machine learning
 For this project, i have chosen the penguin sizes dataset from kaggle, 
 accessible here https://www.kaggle.com/datasets/amulyas/penguin-size-dataset/code
 This dataset was chosen because i like penguins and the dataset was highly rated and reccomended for
- learning and education. It contains data on around 350 penguins and includes the penguins island of 
- residence, species, culmen length, culmen depth, flipper length, body mass and sex. The data was
-  cleaned so any samples with important values missing were removed.
+learning and education. It contains data on around 350 penguins and includes the penguins island of 
+residence, species, culmen length, culmen depth, flipper length, body mass and sex. The data was
+cleaned so any samples with important values missing were removed.
 
 This data was used in a classification problem where the culmen length, culmen depth, flipper length,
  and body mass was used to determine the species of the penguin. 
@@ -14,9 +14,9 @@ This code runs in python. The dependencies and versions needed are listed in the
 file.
 
 The py Q1-folder file contains the first question, where I solved the problem using a traditional,
- non neural network method. I did this by using a skikit-learn prebuilt Random Forest Classifier 
- (RFC) function. This specific method was chosen because RFC works well for classification problems 
- where the data is in categories, like the data from the penguin dataset. 
+non neural network method. I did this by using a skikit-learn prebuilt Random Forest Classifier 
+(RFC) function. This specific method was chosen because RFC works well for classification problems 
+where the data is in categories, like the data from the penguin dataset. 
 
 The py Q2-folder file contains the second question, where the problem was solved using a 
 non-traditional neural network method. For this i chose a MultiLayer Perceptron (MLP) and used the 
