@@ -1,5 +1,17 @@
-pandas
-numpy
-scikit-learn
-seaborn
-matplotlib
+This project was created in a python virtual environment in VSCode using python 3.14.2
+
+The packages I used in this project and their versions are listed below:
+pandas - 2.2.3
+numpy - 2.4.0
+seaborn - 0.13.2
+matplotlib - 3.10.8
+
+Various scikit-learn functions were imported. These were all imported from scikit-learn 1.8.0
+The installed packages are listed below:
+sklearn.model_selection - test_train_split
+sklearn.ensemble - RandomForestClassifier
+sklearn.metrics - accuracy_score, classification_report
+sklearn.preprocessing - LabelEncoder
+sklearn.metrics - confusion_matrix, ConfusionMatrixDisplay
+sklearn.inspection - permutation_importance
+sklearn.exceptions - UndefininedMetricWarning
